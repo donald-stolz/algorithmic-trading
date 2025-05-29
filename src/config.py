@@ -11,6 +11,7 @@ load_dotenv(ROOT_DIR / '.env')
 # API Configuration
 ALPACA_API_KEY = os.getenv('ALPACA_API_KEY')
 ALPACA_SECRET_KEY = os.getenv('ALPACA_SECRET_KEY')
+ALPACA_ENDPOINT = os.getenv('ALPACA_ENDPOINT', 'https://paper-api.alpaca.markets')  # Default to paper trading
 
 # Database Configuration
 DB_HOST = os.getenv('DB_HOST', 'localhost')
@@ -49,6 +50,7 @@ def create_env_example():
     example_content = """# API Keys
 ALPACA_API_KEY=your_api_key_here
 ALPACA_SECRET_KEY=your_secret_key_here
+ALPACA_ENDPOINT=https://paper-api.alpaca.markets  # Use https://api.alpaca.markets for live trading
 
 # Database Configuration
 DB_HOST=localhost
